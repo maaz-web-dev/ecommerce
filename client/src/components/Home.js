@@ -6,22 +6,30 @@ import CardsData from "./CardData";
 import { addToCart } from '../redux/features/cartSlice';
 import { useDispatch } from 'react-redux';
 import toast from 'react-hot-toast';
+import Banner from './Banner';
 
 
 const Home = () => {
     const [cartData, setCartData] = useState(CardsData);
     const dispatch = useDispatch();
 
-
+    const getRandomCard = () => {
+        const randomIndex = Math.floor(Math.random() * cartData.length);
+        return cartData[randomIndex];
+      };
     // add to cart 
     const send = (e)=>{
+        console.log("card data ", cartData[0]);
         dispatch(addToCart(e))
         toast.success("Item added In Your Cart")
     }
     return (
         <>
+        
+        <Banner item={getRandomCard()}/>
             <section className='iteam_section mt-4 container'>
-                <h2 className='px-4' style={{ fontWeight: 400 }}>Restaurants in Ahmedabad Open now</h2>
+              
+                <h2 className='px-4' style={{ fontWeight: 400 }}>Restaurants is Open now</h2>
                 <div className='row mt-2 d-flex justify-content-around align-items-center'>
                     {
                         cartData.map((element, index) => {
@@ -38,7 +46,7 @@ const Home = () => {
 
                                             <div className="lower_data d-flex justify-content-between ">
                                                 <h5>{element.address}</h5>
-                                                <span>₹ {element.price}</span>
+                                                <span>PKR {element.price}</span>
                                             </div>
                                             <div className="extra"></div>
 

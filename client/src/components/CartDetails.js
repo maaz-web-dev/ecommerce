@@ -163,7 +163,7 @@ const CartDetails = () => {
                                                                         </button>
                                                                     </div>
                                                                 </td>
-                                                                <td className='text-right'>₹ {data.qnty * data.price}</td>
+                                                                <td className='text-right'>PKR {data.qnty * data.price}</td>
                                                             </tr>
                                                         </>
                                                     )
@@ -175,7 +175,7 @@ const CartDetails = () => {
                                                 <th>&nbsp;</th>
                                                 <th colSpan={2}>&nbsp;</th>
                                                 <th>Items In Cart <span className='ml-2 mr-2'>:</span><span className='text-danger'>{totalquantity}</span></th>
-                                                <th className='text-right'>Total Price<span className='ml-2 mr-2'>:</span><span className='text-danger'>₹ {totalprice}</span></th>
+                                                <th className='text-right'>Total Price<span className='ml-2 mr-2'>:</span><span className='text-danger'>PKR {totalprice}</span></th>
                                                 <th className='text-right'><button className='btn btn-success' onClick={makePayment} type='button'>Checkout</button></th>
                                             </tr>
                                         </tfoot>
