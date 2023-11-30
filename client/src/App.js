@@ -17,7 +17,7 @@ function App() {
       <Route  path='/cart' element={<CartDetails />}/>
       <Route  path='/sucess' element={<Sucess />}/>
       <Route  path='/cancel' element={<Cancel />}/>
-     </Routes>
+     </Routes> 
      <Toaster />
     </>
   );
